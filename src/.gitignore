@@ -1,0 +1,14 @@
+Thumbs.db
+Desktop.ini
+
+.vscode/
+.idea/
+
+*.log
+
+dist/
+build/
+
+*.tmp
+
+.env
