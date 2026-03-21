@@ -4,31 +4,36 @@ public class DefaultCountingOutRhymer {
 
     private int[] numbers = new int[12];
 
-    public int anInt = -1;
+    private int total = -1;
 
     public void countIn(int in) {
-        if (!isFull())
-            numbers[++anInt] = in;
+        if (!isFull()) {
+            numbers[++total] = in;
+        }
     }
 
-        public boolean callCheck() {
-            return anInt == -1;
-        }
-        
-            public boolean isFull() {
-                return anInt == 11;
-            }
-        
-                protected int peekaboo() {
-                    if (callCheck())
-                        return -1;
-                    return numbers[anInt];
-                }
-            
-                    public int countOut() {
-                        if (callCheck())
-                            return -1;
-                        return numbers[anInt--];
-                    }
+    private boolean callCheck() {
+        return total == -1;
+    }
 
+    private boolean isFull() {
+        return total == 11;
+    }
+
+    protected int peekaboo() {
+        if (callCheck())
+            return -1;
+        return numbers[total];
+    }
+
+    public int countOut() {
+        if (callCheck())
+            return -1;
+        return numbers[total--];
+    }
+
+    // ✅ Getter dla total (по заданию)
+    public int getTotal() {
+        return total;
+    }
 }
